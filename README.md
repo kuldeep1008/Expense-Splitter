@@ -94,21 +94,7 @@ curl http://localhost:8080/api/groups/1/simplify-debts -H "Authorization: Bearer
 ]
 ```
 
-## How to talk about this project in an interview
 
-- **"Walk me through the architecture"** — controller → service → repository
-  layers, JWT filter running before Spring Security's auth chain, stateless
-  sessions so it scales horizontally.
-- **"What's the hardest part you built?"** — the debt simplification
-  algorithm: explain the greedy max-heap matching approach, why it's bounded
-  by `n - 1` transactions, and the trade-off vs. a naive pairwise-ledger
-  approach.
-- **"How would you scale this?"** — split into services (users, expenses,
-  notifications) behind an API gateway, move balance computation to a
-  read-optimized cache/materialized view instead of recomputing from all
-  expenses every time, add idempotency keys on settlement writes.
-- **"What happens if the AI call fails?"** — explain the graceful
-  degradation + caching in `AiCategorizationService`.
 
 ## Project structure
 ```
@@ -122,3 +108,8 @@ src/main/java/com/example/expensesplitter/
 ├── dto/               # Request/response payloads
 └── exception/         # Centralized error handling
 ```
+
+
+## Live Demo
+ https://expense-splitter-c83v.onrender.com
+ 
