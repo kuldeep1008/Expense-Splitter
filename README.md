@@ -102,7 +102,7 @@ src/main/java/com/example/expensesplitter/
 ├── config/          # Spring Security config
 ├── security/         # JWT util + auth filter
 ├── model/            # JPA entities
-├── repository/       # Spring Data repositories
+├── repository/       # Spring Data repositories  
 ├── service/           # Business logic (incl. BalanceService, AiCategorizationService)
 ├── controller/        # REST endpoints
 ├── dto/               # Request/response payloads
